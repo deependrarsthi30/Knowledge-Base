@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzlon Energy Group - DataHQ Solutions Pitch Deck</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0E6655;
+            --secondary-color: #3498DB;
+            --accent-color: #F39C12;
+            --dark-color: #2C3E50;
+            --light-color: #ECF0F1;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+            font-size: 15px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+        
+        .logo {
+            color: var(--light-color);
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* Slide Styles */
+        .slide {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 15px;
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .slide h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .slide h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .slide h3 {
+            color: var(--secondary-color);
+            margin: 15px 0 8px;
+            font-size: 20px;
+        }
+        
+        .slide p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .slide ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .slide li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        /* Specific Slide Styles */
+        #slide1 {
+            background: linear-gradient(135deg, #76b852, #0E6655);
+        }
+        
+        #slide2 {
+            background: linear-gradient(135deg, #2980B9, #3498DB);
+        }
+        
+        #slide3 {
+            background: linear-gradient(135deg, #F39C12, #F1C40F);
+        }
+        
+        #slide4 {
+            background: linear-gradient(135deg, #16a085, #2ecc71);
+        }
+        
+        #slide5 {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        }
+        
+        #slide6 {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+        
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .feature-item {
+            background-color: rgba(236, 240, 241, 0.8);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .feature-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .feature-item p {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        
+        /* Case Study */
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 12px;
+            background-color: rgba(236, 240, 241, 0.8);
+            border-radius: 6px;
+            flex: 1;
+            min-width: 150px;
+            margin: 6px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--dark-color);
+            font-size: 13px;
+        }
+        
+        /* Conclusion */
+        .conclusion-points {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .conclusion-point {
+            background-color: rgba(236, 240, 241, 0.8);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .conclusion-point p {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+        
+        /* Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide h2 {
+                font-size: 28px;
+            }
+            
+            .slide h3 {
+                font-size: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container container">
+            <div class="logo">Suzlon<span>Energy</span> | DataHQ</div>
+            <div class="nav-links">
+                <a href="#slide1">Intro</a>
+                <a href="#slide2">Challenges</a>
+                <a href="#slide3">DataHQ</a>
+                <a href="#slide4">Benefits</a>
+                <a href="#slide5">Case Study</a>
+                <a href="#slide6">Conclusion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Introduction -->
+    <section id="slide1" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">01</div>
+            <h2>Suzlon Energy Group Overview</h2>
+            <h3>A Global Leader in Renewable Energy</h3>
+            <ul>
+                <li><strong>Founded:</strong> 1995</li>
+                <li><strong>Headquarters:</strong> Pune, India</li>
+                <li><strong>Industry:</strong> Renewable Energy (Wind Turbines)</li>
+                <li><strong>Global Presence:</strong> Operations in 19 countries</li>
+                <li><strong>Achievements:</strong> ~20.8 GW wind energy capacity installed globally, 36% of India's wind installations</li>
+            </ul>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">1995</div>
+                    <div class="stat-label">Year Founded</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">19</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20.8</div>
+                    <div class="stat-label">GW Capacity</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">36%</div>
+                    <div class="stat-label">India Market Share</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Current Challenges -->
+    <section id="slide2" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">02</div>
+            <h2>Current Challenges</h2>
+            <h3>Key Issues Suzlon Faces</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>High Operational Costs</h4>
+                    <p>Maintenance of wind turbines represents a significant ongoing expense that impacts profitability.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Forecasting Limitations</h4>
+                    <p>Need for improved energy yield forecasting and enhanced turbine efficiency to maximize output.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>SCADA Dependency</h4>
+                    <p>Reliance on SCADA systems for monitoring ~9,700 turbines globally creates monitoring challenges.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Market Pressures</h4>
+                    <p>Pressure to maintain profitability amidst fluctuating renewable energy markets and increasing competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Why DataHQ? -->
+    <section id="slide3" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">03</div>
+            <h2>Why DataHQ?</h2>
+            <h3>Advanced Solutions for Modern Challenges</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Predictive Maintenance</h4>
+                    <p>Advanced analytics identify potential failures before they occur, reducing downtime and repair costs.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>AI-Driven Insights</h4>
+                    <p>Machine learning algorithms optimize turbine performance and energy output through intelligent adjustments.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Cloud-Based Solutions</h4>
+                    <p>Centralized monitoring and reporting through secure cloud infrastructure enables global oversight.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Enhanced Scheduling</h4>
+                    <p>Sophisticated forecasting capabilities reduce downtime and optimize maintenance schedules.</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Operational Efficiency Improvements</h3>
+            <ul>
+                <li><strong>Proactive Maintenance:</strong> Transform reactive repairs into scheduled preventive maintenance with up to 30% reduction in emergency service calls.</li>
+                <li><strong>Failure Prediction:</strong> Advanced algorithms detect early warning signs of component fatigue, allowing for strategic part replacement.</li>
+                <li><strong>Remote Diagnostics:</strong> Reduce on-site visits with comprehensive remote monitoring capabilities across all 9,700 turbines.</li>
+                <li><strong>Weather Integration:</strong> Smart forecasting that accounts for weather patterns to optimize turbine operations during peak wind conditions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Slide 4: Benefits for Suzlon -->
+    <section id="slide4" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">04</div>
+            <h2>Benefits for Suzlon</h2>
+            <h3>Strategic Advantages</h3>
+            <ol>
+                <li>
+                    <strong>Improved Operational Efficiency:</strong> 
+                    <p>Predictive analytics can reduce maintenance costs by forecasting issues before they occur, creating a proactive rather than reactive approach to turbine management.</p>
+                </li>
+                <li>
+                    <strong>Enhanced Energy Yield:</strong> 
+                    <p>AI algorithms optimize turbine performance based on real-time conditions, increasing energy output per unit and maximizing revenue generation.</p>
+                </li>
+                <li>
+                    <strong>Centralized Monitoring:</strong> 
+                    <p>Real-time data integration across global sites ensures uninterrupted operations and faster decision-making, improving overall fleet management.</p>
+                </li>
+                <li>
+                    <strong>Cost Savings:</strong> 
+                    <p>Reduced downtime and better asset utilization lead to significant financial savings, directly impacting the bottom line and improving shareholder value.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Slide 5: Case Study Potential -->
+    <section id="slide5" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">05</div>
+            <h2>Case Study Potential</h2>
+            <h3>Impact on Suzlon's Operations</h3>
+            <p>Integration of DataHQ solutions creates measurable improvements across Suzlon's operational portfolio:</p>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">14.8</div>
+                    <div class="stat-label">GW of Assets Managed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">↓15%</div>
+                    <div class="stat-label">Potential Maintenance Cost Reduction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">↑8%</div>
+                    <div class="stat-label">Potential Energy Yield Improvement</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">↑EBITDA</div>
+                    <div class="stat-label">Growth Trend Support</div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Service Portfolio Enhancement</h3>
+            <ul>
+                <li><strong>Portfolio Management:</strong> Integration of DataHQ solutions will significantly improve Suzlon's service portfolio efficiency (currently managing 14.8 GW of assets).</li>
+                <li><strong>Profitability Boost:</strong> Increased profitability through data-driven decision-making, directly aligning with Suzlon's recent EBITDA growth trends.</li>
+                <li><strong>Performance Metrics:</strong> Real-time KPI dashboards provide actionable insights for operational teams across all managed assets.</li>
+                <li><strong>Cost Allocation:</strong> Smart resource allocation optimizes maintenance costs while maximizing asset uptime.</li>
+            </ul>
+            
+            <p>Through these improvements, Suzlon can establish a sustainable path to enhanced shareholder value while strengthening its service offerings.</p>
+        </div>
+    </section>
+
+    <!-- Slide 6: Conclusion -->
+    <section id="slide6" class="slide">
+        <div class="slide-content">
+            <div class="slide-number">06</div>
+            <h2>Future Collaboration Goals</h2>
+            <h3>Transforming Challenges into Opportunities</h3>
+            <div class="conclusion-points">
+                <div class="conclusion-point">
+                    <p><strong>Industry Leadership:</strong> Position Suzlon as a leader in data-driven renewable energy solutions, setting new standards for the industry.</p>
+                </div>
+                <div class="conclusion-point">
+                    <p><strong>Competitive Edge:</strong> Strengthen Suzlon's competitive position in global markets through innovation and operational efficiency.</p>
+                </div>
+                <div class="conclusion-point">
+                    <p><strong>Strategic Growth:</strong> Leverage data insights to identify new market opportunities and optimize existing operations.</p>
+                </div>
+                <div class="conclusion-point">
+                    <p><strong>Sustainability Leadership:</strong> Enhance Suzlon's reputation as a pioneer in sustainable energy through advanced technological integration.</p>
+                </div>
+            </div>
+            
+            <div style="background-color: rgba(14, 102, 85, 0.1); border-left: 3px solid var(--primary-color); padding: 15px; border-radius: 6px; margin-top: 20px;">
+                <h4 style="color: var(--primary-color); margin-bottom: 8px; font-size: 16px;">The DataHQ Advantage</h4>
+                <p style="font-size: 13px; margin-bottom: 0;">By leveraging DataHQ's solutions, Suzlon can enhance its operational capabilities, reduce costs, and solidify its position as a renewable energy pioneer. This partnership represents a strategic opportunity to transform data into a competitive advantage across Suzlon's global operations.</p>
+            </div>
+            
+            <div
+</body>
+</html>
